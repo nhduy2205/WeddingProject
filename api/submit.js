@@ -1,7 +1,7 @@
 const { MongoClient } = require('mongodb');
 
 // MongoDB connection URI
-const uri = 'mongodb+srv://duym5122015:123456@Aa@cluster0.mongodb.net/damcuoi?retryWrites=true&w=majority';
+const uri = 'mongodb+srv://duym5122015:123456@Aa@cluster0.9x7hy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
 module.exports = async (req, res) => {
   if (req.method === 'POST') {
