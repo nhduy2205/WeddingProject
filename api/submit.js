@@ -1,7 +1,7 @@
 
 import { MongoClient } from 'mongodb';
 
-const uri = 'mongodb+srv://duym5122015:&LFSauxL@cluster0.eld6y.mongodb.net/weeding?retryWrites=true&w=majority';
+const uri = 'mongodb+srv://duym5122015:&LFSauxL@cluster0.eld6y.mongodb.net/wedding?retryWrites=true&w=majority';
 let client;
 let clientPromise;
 
