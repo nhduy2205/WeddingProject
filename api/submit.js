@@ -1,21 +1,30 @@
-const fs = require('fs');
-const path = require('path');
+const { MongoClient } = require('mongodb');
+
+// MongoDB connection URI
+const uri = 'mongodb+srv://duym5122015:&LFSauxL@cluster0.mongodb.net/wedding?retryWrites=true&w=majority';
 
 module.exports = async (req, res) => {
   if (req.method === 'POST') {
-    const { name, email } = req.body;
+    const { name, message } = req.body;  // Extract the form data
 
-    // Prepare data
-    const data = `Name: ${name}, Email: ${email}\n`;
-
-    const filePath = path.join(__dirname, 'data.txt');
+    // Create a new MongoClient
+    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
     try {
-      // Append to file
-      fs.appendFileSync(filePath, data);
-      res.status(200).send('Data has been saved!');
+      await client.connect();  // Connect to MongoDB
+
+      const database = client.db('wedding');  // Choose the 'wedding' database
+      const collection = database.collection('loichuc');  // Choose the 'loichuc' collection
+
+      // Insert the form data into the collection
+      const result = await collection.insertOne({ name, message, date: new Date() });
+
+      res.status(200).send('Data has been saved successfully!');
     } catch (error) {
-      res.status(500).send(error);
+      console.error(error);
+      res.status(500).send('Unable to save data');
+    } finally {
+      await client.close();  // Close the connection
     }
   } else {
     res.status(405).send('Method Not Allowed');
