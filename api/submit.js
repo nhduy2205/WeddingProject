@@ -8,14 +8,14 @@ module.exports = async (req, res) => {
     // Prepare data
     const data = `Name: ${name}, Email: ${email}\n`;
 
-    const filePath = path.join(__dirname, '../data.txt');
+    const filePath = path.join(__dirname, 'data.txt');
 
     try {
       // Append to file
       fs.appendFileSync(filePath, data);
       res.status(200).send('Data has been saved!');
     } catch (error) {
-      res.status(500).send('Unable to save data');
+      res.status(500).send(error);
     }
   } else {
     res.status(405).send('Method Not Allowed');
