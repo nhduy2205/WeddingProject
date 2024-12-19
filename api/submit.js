@@ -8,10 +8,10 @@ export default async (req, res) => {
     const { name, message } = req.body;  // Extract the form data
 
     // Create a new MongoClient
-    // const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
     try {
-    //   await client.connect();  // Connect to MongoDB
+      await client.connect();  // Connect to MongoDB
 
     //   const database = client.db('damcuoi');  // Choose the 'wedding' database
     //   const collection = database.collection('loichuc');  // Choose the 'loichuc' collection
@@ -19,8 +19,7 @@ export default async (req, res) => {
     //   // Insert the form data into the collection
     //   const result = await collection.insertOne({ name, message, date: new Date() });
 
-    //   res.status(200).send('Data has been saved successfully!');
-    res.status(500).send("sá");
+      res.status(200).send('Data has been saved successfully!');
     } catch (error) {
       console.error(error);
       res.status(500).send(error);
