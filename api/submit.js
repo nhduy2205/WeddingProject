@@ -13,11 +13,11 @@ module.exports = async (req, res) => {
     try {
       await client.connect();  // Connect to MongoDB
 
-      const database = client.db('damcuoi');  // Choose the 'wedding' database
-      const collection = database.collection('loichuc');  // Choose the 'loichuc' collection
+    //   const database = client.db('damcuoi');  // Choose the 'wedding' database
+    //   const collection = database.collection('loichuc');  // Choose the 'loichuc' collection
 
-      // Insert the form data into the collection
-      const result = await collection.insertOne({ name, message, date: new Date() });
+    //   // Insert the form data into the collection
+    //   const result = await collection.insertOne({ name, message, date: new Date() });
 
       res.status(200).send('Data has been saved successfully!');
     } catch (error) {
