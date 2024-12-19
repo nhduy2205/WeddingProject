@@ -17,7 +17,7 @@ export default async (req, res) => {
 
     try {
       const client = await clientPromise; // Reuse the connection
-      const database = client.db('damcuoi'); // Database name
+      const database = client.db('wedding'); // Database name
       const collection = database.collection('loichuc'); // Collection name
 
       // Insert the form data
