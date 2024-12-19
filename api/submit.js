@@ -22,11 +22,11 @@ module.exports = async (req, res) => {
       res.status(200).send('Data has been saved successfully!');
     } catch (error) {
       console.error(error);
-      res.status(500).send('Unable to save data');
+      res.status(500).send(error);
     } finally {
       await client.close();  // Close the connection
     }
   } else {
-    res.status(405).send('Method Not Allowed');
+    res.status(405).send(error);
   }
 };
