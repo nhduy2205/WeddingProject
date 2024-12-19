@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch(error => {
             console.error("Error fetching data:", error);
-            dataList.innerHTML = "<p>Error fetching data. Please try again later.</p>";
+            dataList.innerHTML = error;
         });
 
     // Handle form submission
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch(error => {
             console.error("Error submitting data:", error);
-            alert("Error submitting data. Please try again later.");
+            alert(error);
         });
     });
 });

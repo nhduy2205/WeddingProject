@@ -2,7 +2,7 @@
 header('Access-Control-Allow-Origin: *');  // Cho phép tất cả các domain
 header('Access-Control-Allow-Methods: GET, POST, OPTIONS'); // Cho phép phương thức GET, POST, OPTIONS
 header('Access-Control-Allow-Headers: Content-Type'); // Cho phép header Content-Type
-
+header('Content-Type: application/json');
 // Xử lý yêu cầu OPTIONS
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
