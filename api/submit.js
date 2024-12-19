@@ -1,7 +1,7 @@
 import { MongoClient } from 'mongodb';
 
 // MongoDB connection URI
-const uri = 'mongodb+srv://duym5122015:&LFSauxL@cluster0.zvgidt4.mongodb.net/weeding?retryWrites=true&w=majority';
+const uri = 'mongodb+srv://duym5122015:&LFSauxL@cluster0.eld6y.mongodb.net/weeding?retryWrites=true&w=majority';
 
 export default async (req, res) => {
   if (req.method === 'POST') {
