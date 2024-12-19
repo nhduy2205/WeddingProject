@@ -39,6 +39,7 @@ if ($action === 'get_data') {
     echo json_encode($data);
 } elseif ($action === 'submit_data' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     // Nhận và xử lý dữ liệu POST
+    echo("sdsdsdsd");
     $new_data = isset($_POST['data']) ? trim($_POST['data']) : '';
     if (empty($new_data)) {
         echo json_encode(['success' => false, 'message' => 'No data provided.']);
