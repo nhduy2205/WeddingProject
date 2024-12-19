@@ -1,7 +1,7 @@
 const { MongoClient } = require('mongodb');
 
 // MongoDB connection URI
-const uri = 'mongodb+srv://duym5122015:&LFSauxL@cluster0.mongodb.net/wedding?retryWrites=true&w=majority';
+const uri = 'mongodb+srv://duym5122015:123456@Aa@cluster0.9x7hy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
 module.exports = async (req, res) => {
   if (req.method === 'POST') {
@@ -13,7 +13,7 @@ module.exports = async (req, res) => {
     try {
       await client.connect();  // Connect to MongoDB
 
-      const database = client.db('wedding');  // Choose the 'wedding' database
+      const database = client.db('damcuoi');  // Choose the 'wedding' database
       const collection = database.collection('loichuc');  // Choose the 'loichuc' collection
 
       // Insert the form data into the collection
